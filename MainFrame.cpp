@@ -1,30 +1,34 @@
 #include "MainFrame.h"
 #include <wx/wx.h>
+#include <wx/spinctrl.h>
 
-enum IDs
-{
-	BUTTON_ID = 2,
-	SLIDER_ID = 3,
-	TEXT_ID = 4,
-};
-	
-wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
-EVT_BUTTON(BUTTON_ID,MainFrame::OnButtonClicked)
-EVT_BUTTON(SLIDER_ID,MainFrame::OnButtonClicked)
-wxEND_EVENT_TABLE()
-
-MainFrame::MainFrame(const wxString& title) :wxFrame(nullptr,wxID_ANY,title)	
+MainFrame::MainFrame(const wxString& title) :wxFrame(nullptr,wxID_ANY,title)    
 
 {
-	wxPanel* panel = new wxPanel(this);
-	wxButton* Button = new wxButton(panel, BUTTON_ID, "1", wxPoint(100, -1), wxDefaultSize);
-	wxSlider* Audio = new wxSlider(panel, SLIDER_ID, 25, 0, 100, wxPoint(300, -1), wxDefaultSize,wxSL_VALUE_LABEL);
-	CreateStatusBar();
-	
+    wxPanel* panel = new wxPanel(this);
+    wxButton* button = new wxButton(panel, wxID_ANY, "GAMER2030 IS GAY", wxPoint(100, 100), wxSize(200, 30),wxBU_LEFT | wxBU_RIGHT);
+    wxCheckBox* Checkbox = new wxCheckBox(panel, wxID_ANY, "PARSA IS GAY", wxPoint(500, 200),wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);
+    Checkbox->SetBackgroundColour(*wxBLACK);
+    Checkbox->SetForegroundColour(*wxGREEN);
+    wxStaticText* statictext = new wxStaticText(panel, wxID_ANY, "THIS IS A TEXT", wxPoint(200, 200),wxSize(100,-1));
+    statictext->SetBackgroundColour(*wxBLACK);
+    statictext->SetForegroundColour(*wxRED);
+    wxTextCtrl* textcontrol = new wxTextCtrl(panel, wxID_ANY, "THIS TEXT IS EDITABLE", wxPoint(10, 30), wxSize(50, -2));
+    wxSlider* slider = new wxSlider(panel, wxID_ANY, 50, 0, 100, wxPoint(330, 40), wxSize(100,100),wxSL_VALUE_LABEL );
+    wxGauge* Healthbar = new wxGauge(panel, wxID_ANY, 100, wxPoint(400, -1));
+    Healthbar->SetValue(25);
+    wxArrayString choices;
+    choices.Add("FSR 3.1");
+    choices.Add("DLSS 3");
+    choices.Add("Xlss");
+    choices.Add("aTest");
+
+    wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(500, 20),wxSize(200,200), choices,wxCB_SORT);
+    choice->Select(1);
+
+    wxSpinCtrl* spin = new wxSpinCtrl(panel, wxID_ANY, "", wxPoint(10, 200), wxSize(110, 30),0,200);
+    wxListBox* listbox = new wxListBox(panel, wxID_ANY, wxPoint(475, -1), wxDefaultSize, choices);
+    wxRadioBox* choicebox = new wxRadioBox(panel, wxID_ANY, "UPSCALE SIZE",wxPoint(800,-1),wxDefaultSize ,choices);
+
+
 }
-void MainFrame::OnButtonClicked(wxCommandEvent& evt)
-{
-	wxLogStatus("GAMER2030 IS Gay af ");
-}
-
-	
