@@ -6,14 +6,14 @@ MainFrame::MainFrame(const wxString& title) :wxFrame(nullptr,wxID_ANY,title)
 
 {
     wxPanel* panel = new wxPanel(this);
-    wxButton* button = new wxButton(panel, wxID_ANY, "GAMER2030 IS GAY", wxPoint(100, 100), wxSize(200, 30),wxBU_LEFT | wxBU_RIGHT);
-    wxCheckBox* Checkbox = new wxCheckBox(panel, wxID_ANY, "PARSA IS GAY", wxPoint(500, 200),wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);
+    wxButton* button = new wxButton(panel, wxID_ANY, "This is a Button", wxPoint(100, 100), wxSize(200, 30),wxBU_LEFT | wxBU_RIGHT);
+    wxCheckBox* Checkbox = new wxCheckBox(panel, wxID_ANY, "CheckBox", wxPoint(500, 200),wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);
     Checkbox->SetBackgroundColour(*wxBLACK);
     Checkbox->SetForegroundColour(*wxGREEN);
-    wxStaticText* statictext = new wxStaticText(panel, wxID_ANY, "THIS IS A TEXT", wxPoint(200, 200),wxSize(100,-1));
+    wxStaticText* statictext = new wxStaticText(panel, wxID_ANY, "Text - non Editable", wxPoint(200, 200),wxSize(100,-1));
     statictext->SetBackgroundColour(*wxBLACK);
     statictext->SetForegroundColour(*wxRED);
-    wxTextCtrl* textcontrol = new wxTextCtrl(panel, wxID_ANY, "THIS TEXT IS EDITABLE", wxPoint(10, 30), wxSize(50, -2));
+    wxTextCtrl* textcontrol = new wxTextCtrl(panel, wxID_ANY, "Text - Editable", wxPoint(10, 30), wxSize(50, -2)); 
     wxSlider* slider = new wxSlider(panel, wxID_ANY, 50, 0, 100, wxPoint(330, 40), wxSize(100,100),wxSL_VALUE_LABEL );
     wxGauge* Healthbar = new wxGauge(panel, wxID_ANY, 100, wxPoint(400, -1));
     Healthbar->SetValue(25);
@@ -32,4 +32,5 @@ MainFrame::MainFrame(const wxString& title) :wxFrame(nullptr,wxID_ANY,title)
 
 
 }
+
 
