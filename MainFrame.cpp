@@ -18,10 +18,10 @@ MainFrame::MainFrame(const wxString& title) :wxFrame(nullptr,wxID_ANY,title)
     wxGauge* Healthbar = new wxGauge(panel, wxID_ANY, 100, wxPoint(400, -1));
     Healthbar->SetValue(25);
     wxArrayString choices;
-    choices.Add("FSR 3.1");
-    choices.Add("DLSS 3");
-    choices.Add("Xlss");
-    choices.Add("aTest");
+    choices.Add("ITEM 1");
+    choices.Add("ITEM 3");
+    choices.Add("ITEM 4");
+    choices.Add("ITEM 2");
 
     wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(500, 20),wxSize(200,200), choices,wxCB_SORT);
     choice->Select(1);
@@ -32,3 +32,4 @@ MainFrame::MainFrame(const wxString& title) :wxFrame(nullptr,wxID_ANY,title)
 
 
 }
+
